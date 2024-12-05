@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,28 +9,34 @@
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #0f111a; /* Navy Blue Background */
-      color: #ffffff; /* White Text */
+      background-color: #0f111a; /* Dark background */
+      color: #ffffff; /* White text */
+      transition: background-color 0.3s ease-in-out; /* Smooth transition */
     }
-    
+
     header {
-      background-color: #1a1c2c; /* Dark Blue */
+      background-color: #141627; /* Dark blue */
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: background-color 0.3s; /* Smooth transition for the header */
     }
-    .oooo{
+
+    .oooo {
       padding: 7px;
       display: flex;
     }
-    .logo{
+
+    .logo {
       height: 50px;
     }
-    .sdk{
+
+    .sdk {
       margin-top: 7px;
       height: 35px;
     }
+
     nav a {
       color: #ffffff;
       text-decoration: none;
@@ -37,58 +44,104 @@
       font-size: 1.2rem;
       font-weight: bold;
     }
+
     nav a:hover {
-      color: #00d1b2; /* Accent Color */
+      color: #00d1b2; /* Accent color */
     }
+
     .hero {
       text-align: center;
-      padding: .5rem 2rem;
+      padding: 2rem 2rem;
+      background: linear-gradient(to bottom right, #1a1c2c, #2c2f42); /* Gradient background */
+      border-radius: 10px; /* Rounded corners */
     }
+
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
+      transition: color 0.3s; /* Text color transition */
     }
+
     .hero p {
       font-size: 1.2rem;
       color: #c0c0c0;
     }
-    .content {
-      padding: 2rem;
-    }
+
     .video {
       margin-top: 2rem;
       text-align: center;
     }
-    iframe {
-      width: 80%;
-      height: 400px;
-      border: none;
+
+    video {
+      width: 100%;
+      max-width: 600px; /* Responsive */
+      height: auto; /* Responsive */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
     }
-    .feedback {
+
+    .content {
+      padding: 2rem;
+      background-color: #2c2f42; /* Light dark background for content */
+      border-radius: 10px; /* Rounded corners */
+      margin: 2rem 0; /* Margin for spacing */
+      opacity: 0;
+      transform: translateY(30px); /* Initial position for animation */
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Transitions for entry */
+    }
+
+    /* Show the content smoothly */
+    body.loaded .content {
+      opacity: 1;
+      transform: translateY(0); /* Move to original position */
+    }
+
+    .help_page {
       text-align: center;
       margin: 3rem 0;
     }
+
     footer {
-      background-color: #1a1c2c;
+      background-color: #1a1c2c; /* Dark blue */
       text-align: center;
       padding: 1rem 0;
       margin-top: 2rem;
     }
+
     footer a {
-      color: #00d1b2;
+      color: #00d1b2; /* Accent color */
       text-decoration: none;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    .content img {
+      border-radius: 10px; /* Add rounded corners to images */
+      transition: transform 0.3s; /* Transition for hover effect */
+    }
+
+    .content img:hover {
+      transform: scale(1.05); /* Scale effect on hover */
+    }
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <header>
     <div class="oooo">
-      <img src="static\sdk_logo.png" alt="SDK Tools Logo" class="logo">
-      <img src="static\final.png" alt="SDK Tools Logo" class="sdk">
+      <img src="static/sdk_logo.png" alt="SDK Tools Logo" class="logo">
+      <img src="static/final.png" alt="SDK Tools Logo" class="sdk">
     </div>
     <nav>
       <a href="#home">Home</a>
@@ -102,25 +155,63 @@
     <p>Build and Optimize Your Development Workflow</p>
     <div class="video">
       <h3>Introduction Video</h3>
-      <p>Video placeholder - embed your app intro here!</p>
+      <video controls autoplay muted src="static/sasukewp.mp4"></video>
     </div>
   </section>
 
   <!-- Content Section -->
   <section class="content">
-    <h2>Details of the Software</h2>
-    <p>Placeholder for software details. Follow the steps below to edit this section later.</p>
-    <ol>
-      <li>Open this file in a text editor.</li>
-      <li>Find the section with the heading *Details of the Software*.</li>
-      <li>Add your software description between the <p> tags.</li>
-    </ol>
+    <h2 style="text-align: center;">Details of the Software</h2>
+    <br>
+    <div style="display: flex; justify-content: space-around;">
+      <div>
+        <img width="600px" height="400px" src="static/green.jpg" alt="loading image">
+      </div>
+      <div style="margin: 80px 100px;">
+        <h1 style="font-size: 4rem;">Green Content</h1>
+        <p>This is green. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quisquam ducimus quia harum
+          tenetur, voluptates architecto nemo laboriosam dolorum quidem, hic debitis voluptas accusamus natus
+          perspiciatis cum quis molestiae tempore. Nisi fugiat, atque excepturi maiores quod neque dolorum aliquam eos
+          libero, enim dolor? Ut corrupti earum minus deleniti, assumenda optio?</p>
+      </div>
+    </div>
+
+    <br><br>
+
+    <div style="display: flex; justify-content: space-around;">
+      <div style="margin: 80px 100px;">
+        <h1 style="font-size: 4rem;">Green Content</h1>
+        <p>This is green. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum sint excepturi animi aperiam
+          doloribus architecto illo illum, cupiditate aspernatur eligendi eum iste ducimus asperiores error natus vel
+          laudantium, veritatis placeat aut consequatur quos tempora ipsam nihil. Dolorem explicabo excepturi illum
+          earum, accusantium amet eveniet laborum, atque numquam facilis consequatur. Tenetur?</p>
+      </div>
+      <div>
+        <img width="600px" height="400px" src="static/green.jpg" alt="loading image">
+      </div>
+    </div>
+
+    <br><br>
+
+    <div style="display: flex; justify-content: space-around;">
+      <div>
+        <img width="600px" height="400px" src="static/green.jpg" alt="loading image">
+      </div>
+      <div style="margin: 80px 100px;">
+        <h1 style="font-size: 4rem;">Green Content</h1>
+        <p>This is green. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quisquam ducimus quia harum
+          tenetur, voluptates architecto nemo laboriosam dolorum quidem, hic debitis voluptas accusamus natus
+          perspiciatis cum quis molestiae tempore. Nisi fugiat, atque excepturi maiores quod neque dolorum aliquam eos
+          libero, enim dolor? Ut corrupti earum minus deleniti, assumenda optio?</p>
+      </div>
+    </div>
   </section>
 
   <!-- Help & Support -->
-  <section id="help-support">
+  <section id="help-support" class="help_page">
     <h2>Help & Support</h2>
-    <div class="feedback">
+    <p>Content related to this section.</p>
+    <div>
       <h3>Feedback Form</h3>
       <a href="https://forms.gle/qpcfm6rXfEMPDDMo8" target="_blank">Click here to give feedback</a>
     </div>
@@ -131,5 +222,13 @@
     <p>© 2024 SDK Tools | Designed with passion.</p>
     <p>For inquiries, visit our <a href="#help-support">Help & Support</a> page.</p>
   </footer>
+
+  <!-- JavaScript to trigger content animation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
 </body>
+
 </html>
