@@ -9,23 +9,23 @@
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #0f111a; /* Dark background */
-      color: #ffffff; /* White text */
-      transition: background-color 0.3s ease-in-out; /* Smooth transition */
+      background-color: #0f111a;
+      color: #ffffff;
+      transition: background-color 0.3s ease-in-out;
     }
 
     header {
-      background-color: #141627; /* Dark blue */
+      background-color: #141627;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: background-color 0.3s; /* Smooth transition for the header */
     }
 
     .oooo {
       padding: 7px;
       display: flex;
+      align-items: center;
     }
 
     .logo {
@@ -46,20 +46,23 @@
     }
 
     nav a:hover {
-      color: #00d1b2; /* Accent color */
+      color: #00d1b2;
+    }
+
+    nav .donation a {
+      color: #FF5722;
     }
 
     .hero {
       text-align: center;
-      padding: 2rem 2rem;
-      background: linear-gradient(to bottom right, #1a1c2c, #2c2f42); /* Gradient background */
-      border-radius: 10px; /* Rounded corners */
+      padding: 2rem;
+      background: linear-gradient(to bottom right, #1a1c2c, #2c2f42);
+      border-radius: 10px;
     }
 
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      transition: color 0.3s; /* Text color transition */
     }
 
     .hero p {
@@ -69,31 +72,98 @@
 
     .video {
       margin-top: 2rem;
-      text-align: center;
     }
 
     video {
       width: 100%;
-      max-width: 600px; /* Responsive */
-      height: auto; /* Responsive */
-      border-radius: 10px; /* Rounded corners */
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
     }
 
     .content {
       padding: 2rem;
-      background-color: #2c2f42; /* Light dark background for content */
-      border-radius: 10px; /* Rounded corners */
-      margin: 2rem 0; /* Margin for spacing */
-      opacity: 0;
-      transform: translateY(30px); /* Initial position for animation */
-      transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Transitions for entry */
+      background-color: #2c2f42;
+      border-radius: 10px;
+      margin: 2rem 0;
     }
 
-    /* Show the content smoothly */
-    body.loaded .content {
-      opacity: 1;
-      transform: translateY(0); /* Move to original position */
+    .content h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .content-section {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .content-section .content-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .content-section .content-item img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .content-section .content-item p {
+      flex: 1 1 300px;
+    }
+
+    /* Alternate layout for odd and even items */
+    .content-section .content-item:nth-child(odd) {
+      flex-direction: row;
+      /* Image left, text right */
+    }
+
+    .content-section .content-item:nth-child(even) {
+      flex-direction: row-reverse;
+      /* Image right, text left */
+    }
+
+    .dwmlod {
+      padding: 2rem;
+      background-color: #2c2f42;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .dwn_inside {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-evenly;
+    }
+
+    .dwn_inside img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+
+    .download-button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 16px;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .download-button:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
     }
 
     .help_page {
@@ -101,15 +171,31 @@
       margin: 3rem 0;
     }
 
+    .help_content {
+      text-align: left;
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+
     footer {
-      background-color: #1a1c2c; /* Dark blue */
+      background-color: #1a1c2c;
       text-align: center;
       padding: 1rem 0;
       margin-top: 2rem;
     }
 
+    footer h1 {
+      font-size: 2rem;
+    }
+
+    footer .abt_para {
+      margin-bottom: 2rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+
     footer a {
-      color: #00d1b2; /* Accent color */
+      color: #00d1b2;
       text-decoration: none;
     }
 
@@ -118,20 +204,46 @@
     }
 
     /* Responsive adjustments */
-    @media (max-width: 600px) {
-      video {
-        max-width: 100%;
-        height: auto;
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 1rem;
+      }
+
+      nav a {
+        margin: 0 10px;
+        font-size: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .content-section {
+        flex-direction: column;
+      }
+
+      .dwn_inside {
+        flex-direction: column;
       }
     }
 
-    .content img {
-      border-radius: 10px; /* Add rounded corners to images */
-      transition: transform 0.3s; /* Transition for hover effect */
-    }
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
 
-    .content img:hover {
-      transform: scale(1.05); /* Scale effect on hover */
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .content-section div {
+        margin: 0;
+      }
     }
   </style>
 </head>
@@ -143,66 +255,83 @@
       <img src="static/sdk_logo.png" alt="SDK Tools Logo" class="logo">
       <img src="static/final.png" alt="SDK Tools Logo" class="sdk">
     </div>
-    <nav>
+    <nav style="display: flex; justify-content: space-between;">
       <a href="#home">Home</a>
+      <a href="#download">Download</a>
       <a href="#help-support">Help & Support</a>
+      <a href="#about">About</a>
+      <div class="donation">
+        <a href="#">DONATE</a>
+      </div>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <h1>Welcome to SDK Tools</h1>
-    <p>Build and Optimize Your Development Workflow</p>
+    <h1>Simple, Reliable & Seamless Security</h1>
+    <p>Encrypt, secure, and stay ahead with SDK Tools</p>
+    <p>Where Simplicity Meets you.</p>
     <div class="video">
-      <h3>Introduction Video</h3>
-      <video controls autoplay muted src="static/sasukewp.mp4"></video>
+      <video loop autoplay muted src="static/crousal.mp4"></video>
     </div>
   </section>
 
   <!-- Content Section -->
   <section class="content">
-    <h2 style="text-align: center;">Details of the Software</h2>
-    <br>
-    <div style="display: flex; justify-content: space-around;">
-      <div>
-        <img width="600px" height="400px" src="static/green.jpg" alt="loading image">
+    <h2>Features of the Tool</h2>
+    <div class="content-section">
+      <div class="content-item">
+        <img src="static/WhatsApp Image .jpg" alt="Software Details">
+        <p><b>- AES Encryption and Decryption:</b><br><br>
+          Provides secure file encryption and decryption using the AES algorithm with password-based key generation for
+          strong data protection. <br><br>
+          <b>- Steganography:</b><br><br>
+          Enables hiding sensitive text data within image files and retrieving hidden data from images, ensuring secure
+          and covert communication.<br><br>
+          <b>- File Verification and Key Management:</b><br><br>
+          Supports file integrity checks using SHA256 and MD5 hashes and includes a key library for storing and managing
+          encryption keys securely.
+        </p>
       </div>
-      <div style="margin: 80px 100px;">
-        <h1 style="font-size: 4rem;">Green Content</h1>
-        <p>This is green. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quisquam ducimus quia harum
-          tenetur, voluptates architecto nemo laboriosam dolorum quidem, hic debitis voluptas accusamus natus
-          perspiciatis cum quis molestiae tempore. Nisi fugiat, atque excepturi maiores quod neque dolorum aliquam eos
-          libero, enim dolor? Ut corrupti earum minus deleniti, assumenda optio?</p>
+
+      <br><br>
+
+      <div class="content-item">
+        <img src="static/WhatsApp Image 2.jpg" alt="Software Details">
+        <p><b>- File Compression and Extraction:</b> <br><br>
+          Allows zipping and unzipping of files and directories, supporting formats like .zip and .7z, with progress
+          tracking for large tasks.
+          <br><br>
+          <b>- File Compression and Extraction:</b><br><br>
+          Offers theme preferences (Light, Dark, and Default), a search bar for file navigation, and intuitive options
+          for managing preferences and support
+        </p>
       </div>
+
     </div>
+  </section>
 
-    <br><br>
+  <!-- Download Section -->
+  <section class="dwmlod" id="download">
+    <h1 style="text-align: center;">Download</h1>
+    <div class="dwn_inside">
+      <div>
 
-    <div style="display: flex; justify-content: space-around;">
-      <div style="margin: 80px 100px;">
-        <h1 style="font-size: 4rem;">Green Content</h1>
-        <p>This is green. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum sint excepturi animi aperiam
-          doloribus architecto illo illum, cupiditate aspernatur eligendi eum iste ducimus asperiores error natus vel
-          laudantium, veritatis placeat aut consequatur quos tempora ipsam nihil. Dolorem explicabo excepturi illum
-          earum, accusantium amet eveniet laborum, atque numquam facilis consequatur. Tenetur?</p>
+        <img src="static/windowlogo.png" alt="Windows">
+        <br><br>
+        <div style="display: flex; justify-content: center;">
+          <a href="static/xcrypto setup.exe" class="download-button" download="XCrypto">Download</a>
+        </div>
+
       </div>
       <div>
-        <img width="600px" height="400px" src="static/green.jpg" alt="loading image">
-      </div>
-    </div>
 
-    <br><br>
+        <img src="static/debianlogo.png" alt="Windows">
+        <br><br>
+        <div style="display: flex; justify-content: center;">
+          <a href="static/xcrypto_1.0_amd64.deb" class="download-button" download="XCrypto">Download</a>
+        </div>
 
-    <div style="display: flex; justify-content: space-around;">
-      <div>
-        <img width="600px" height="400px" src="static/green.jpg" alt="loading image">
-      </div>
-      <div style="margin: 80px 100px;">
-        <h1 style="font-size: 4rem;">Green Content</h1>
-        <p>This is green. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quisquam ducimus quia harum
-          tenetur, voluptates architecto nemo laboriosam dolorum quidem, hic debitis voluptas accusamus natus
-          perspiciatis cum quis molestiae tempore. Nisi fugiat, atque excepturi maiores quod neque dolorum aliquam eos
-          libero, enim dolor? Ut corrupti earum minus deleniti, assumenda optio?</p>
       </div>
     </div>
   </section>
@@ -210,25 +339,85 @@
   <!-- Help & Support -->
   <section id="help-support" class="help_page">
     <h2>Help & Support</h2>
-    <p>Content related to this section.</p>
+    <div class="help_content">
+      <p>We're here to assist you with any issues or questions you may have while using XCrypto. Follow the sections
+        below for guidance or contact us directly if needed. <br><br><br>
+
+        <b>Frequently Asked Questions (FAQs):</b> <br><br>
+
+        1. How do I encrypt a file? <br><br>
+
+        Select a file from the file dropdown menu or add a directory using the "Add Directory" button. <br>
+        Enter a password in the password field. <br>
+        Click the "Encrypt" button. Thus the temporary .enc file is saved at the default directory do not use the save
+        as prompt appears after "temporary file save" it is to save your file info in.txt format <br><br>
+
+        2. How do I decrypt a file? <br><br>
+
+        Select an encrypted file (with .enc extension) from the file dropdown menu. <br>
+        Enter the correct password used during encryption. <br>
+        Click the "Decrypt" button to retrieve the original file. <br><br>
+
+        3. How can I hide data in an image? <br><br>
+
+        Use the "Hide in Image" button to select an image file. <br>
+        Enter the text or data you want to hide and choose a save location for the encoded image. <br><br>
+
+        4. How do I extract hidden data from an image? <br><br>
+
+        Click the "Reveal Image" button, select the image file, and retrieve the hidden data. <br><br>
+
+        5. Can I verify the integrity of my files? <br><br>
+
+        Yes, use the "File Verify" option to check file integrity with SHA256, MD5 hashes, or file size verification
+        methods. <br><br>
+
+        <br><br>
+
+        <b>Common Issues and Troubleshooting:</b> <br><br>
+
+        1. I forgot the encryption password. What can I do? <br>
+
+        - Unfortunately, for security reasons, XCrypto cannot recover forgotten passwords. Ensure you store your
+        password securely in the Key Library.<br><br>
+
+        2. My file doesn't decrypt properly. <br>
+
+        - Ensure you are using the same password and file format. A mismatch will cause errors. <br><br>
+
+        3. The app crashes during a task. <br>
+
+        - Make sure the file size is within acceptable limits, and check if your system has enough resources to process
+        the task. <br><br>
+
+        4. I can't load an image for steganography. <br>
+
+        - Ensure the image format is supported (.png, .jpg, .bmp, etc.). <br><br>
+
+        Contact Us:<br>
+        If you encounter any unresolved issues, feel free to reach out to us:<br>
+        Email: sdkminor@gmail.com <br><br>
+      </p>
+    </div>
+
     <div>
       <h3>Feedback Form</h3>
       <a href="https://forms.gle/qpcfm6rXfEMPDDMo8" target="_blank">Click here to give feedback</a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- About -->
+  <footer id="about">
+    <h1>About XCrypto</h1>
+    <p class="abt_para">XCrypto is a user-friendly encryption and decryption tool designed to secure your data with
+      ease. Developed as a minor project by a team of aspiring computer science engineers, it utilizes the robust AES
+      encryption algorithm for protecting files. With added features like steganography, file verification, and
+      compression tools, XCrypto simplifies security for everyday users. It combines functionality and simplicity,
+      offering a customizable interface to enhance your experience.</p>
+
     <p>© 2024 SDK Tools | Designed with passion.</p>
     <p>For inquiries, visit our <a href="#help-support">Help & Support</a> page.</p>
   </footer>
-
-  <!-- JavaScript to trigger content animation -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.body.classList.add("loaded");
-    });
-  </script>
 </body>
 
 </html>
